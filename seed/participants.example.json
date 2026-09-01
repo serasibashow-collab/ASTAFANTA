@@ -1,0 +1,12 @@
+[
+  { "username": "admin", "display_name": "Admin", "password": "CAMBIA_PASSWORD_1", "is_admin": true },
+  { "username": "giocatore2", "display_name": "Giocatore 2", "password": "CAMBIA_PASSWORD_2", "is_admin": false },
+  { "username": "giocatore3", "display_name": "Giocatore 3", "password": "CAMBIA_PASSWORD_3", "is_admin": false },
+  { "username": "giocatore4", "display_name": "Giocatore 4", "password": "CAMBIA_PASSWORD_4", "is_admin": false },
+  { "username": "giocatore5", "display_name": "Giocatore 5", "password": "CAMBIA_PASSWORD_5", "is_admin": false },
+  { "username": "giocatore6", "display_name": "Giocatore 6", "password": "CAMBIA_PASSWORD_6", "is_admin": false },
+  { "username": "giocatore7", "display_name": "Giocatore 7", "password": "CAMBIA_PASSWORD_7", "is_admin": false },
+  { "username": "giocatore8", "display_name": "Giocatore 8", "password": "CAMBIA_PASSWORD_8", "is_admin": false },
+  { "username": "giocatore9", "display_name": "Giocatore 9", "password": "CAMBIA_PASSWORD_9", "is_admin": false },
+  { "username": "giocatore10", "display_name": "Giocatore 10", "password": "CAMBIA_PASSWORD_10", "is_admin": false }
+]
