@@ -8,3 +8,256 @@ button,.button-link{border:0;border-radius:12px;padding:10px 14px;font-weight:90
 .admin-grid{grid-template-columns:minmax(0,1fr) 330px}.admin-main{padding:24px}.phase-buttons{display:flex;flex-wrap:wrap;gap:8px}.divider{height:1px;background:var(--line);margin:24px 0}.search-input{font-size:17px}.search-results{border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:8px;max-height:380px;overflow-y:auto}.search-results button{width:100%;display:flex;justify-content:space-between;text-align:left;border-radius:0;background:#101419;color:var(--text);border-bottom:1px solid var(--line);padding:12px 14px}.search-results button:hover{background:#192029}.search-results small{display:block;color:var(--muted);margin-top:3px}.selected-player{margin-top:14px;padding:16px;border-radius:14px;border:1px solid rgba(140,255,46,.25);background:rgba(140,255,46,.06);display:flex;justify-content:space-between;align-items:center;gap:16px}.selected-player>div{display:grid}.selected-player span{color:var(--muted);font-size:13px}.admin-auction-box{display:grid;grid-template-columns:1fr 1fr;gap:18px;border:1px solid var(--line);background:#0e1216;padding:18px;border-radius:14px}.admin-auction-box .role-badge{margin-left:0}.admin-auction-box h2{font-size:34px;margin:10px 0}.admin-price{font-size:34px;font-weight:1000;color:var(--accent)}.confirm-box{display:grid;align-content:center;gap:9px}.confirm-question{font-size:18px;margin-bottom:6px}
 @media(max-width:900px){.auction-grid,.admin-grid{grid-template-columns:1fr}.side-column{grid-template-columns:1fr 1fr}.live-card{min-height:520px}.topbar{padding:12px 14px}.phase-pill{display:none}.admin-auction-box{grid-template-columns:1fr}}
 @media(max-width:620px){.auction-grid,.admin-grid{padding:10px}.live-card{padding:24px 14px;min-height:500px}.side-column{grid-template-columns:1fr}.top-actions .button-link{display:none}.player-name{font-size:48px}.price{font-size:88px}.selected-player{align-items:stretch;flex-direction:column}.custom-bid{grid-template-columns:1fr 100px}}
+
+/* ============================
+   🌈 FANTABUSONE MAGIC MODE 🦄
+   ============================ */
+
+:root {
+  --accent: #ff4fd8;
+  --accent2: #8fffe0;
+  --text: #35223f;
+  --muted: #786b85;
+  --line: rgba(255,255,255,.55);
+}
+
+
+/* SFONDO ARCOBALENO ANIMATO */
+
+html, body {
+  background:
+    linear-gradient(
+      120deg,
+      #ffd6f6,
+      #c8f7ff,
+      #fff1a8,
+      #d5ffd8,
+      #e4d5ff
+    );
+
+  background-size: 500% 500%;
+  animation: rainbowSky 18s ease infinite;
+}
+
+
+@keyframes rainbowSky {
+  0% {
+    background-position:0% 50%;
+  }
+
+  50% {
+    background-position:100% 50%;
+  }
+
+  100% {
+    background-position:0% 50%;
+  }
+}
+
+
+/* CARD EFFETTO VETRO */
+
+.login-card,
+.live-card,
+.panel {
+
+  background:
+    rgba(255,255,255,.72) !important;
+
+  backdrop-filter:
+    blur(18px);
+
+  border:
+    2px solid rgba(255,255,255,.8);
+
+  box-shadow:
+    0 25px 70px rgba(170,90,200,.25);
+
+}
+
+
+/* TITOLI */
+
+h1,h2 {
+
+  color:#4b245e;
+
+}
+
+
+/* BOTTONI MAGIC */
+
+.primary {
+
+  background:
+    linear-gradient(
+      135deg,
+      #ff4fd8,
+      #9d5cff
+    ) !important;
+
+  color:white !important;
+
+  box-shadow:
+    0 10px 25px rgba(255,79,216,.35);
+
+}
+
+
+.primary:hover {
+
+  transform:
+    translateY(-3px)
+    scale(1.03);
+
+}
+
+
+/* INPUT */
+
+input {
+
+ background:
+ rgba(255,255,255,.8) !important;
+
+ border:
+ 2px solid rgba(180,100,220,.25);
+
+ color:#432052 !important;
+
+}
+
+
+/* TIMER */
+
+.timer {
+
+ color:#ff4fd8 !important;
+
+ text-shadow:
+ 0 0 20px rgba(255,79,216,.35);
+
+ animation:
+ pulseRainbow 1s infinite alternate;
+
+}
+
+
+@keyframes pulseRainbow {
+
+ from {
+  transform:scale(1);
+ }
+
+ to {
+  transform:scale(1.08);
+ }
+
+}
+
+
+/* NOME GIOCATORE */
+
+.player-name {
+
+ color:#51206b;
+
+ text-shadow:
+ 0 8px 30px rgba(160,80,200,.25);
+
+}
+
+
+/* PREZZO */
+
+.price {
+
+ color:#ff4fd8;
+
+}
+
+
+/* BADGE */
+
+.phase-pill,
+.role-badge {
+
+ background:
+ linear-gradient(
+ 135deg,
+ #ffe3f8,
+ #dffff8
+ );
+
+ color:#8b2c9e;
+
+ border:
+ 1px solid rgba(255,255,255,.8);
+
+}
+
+
+/* PALLINO LIVE */
+
+.pulse-dot {
+
+ background:#ff4fd8;
+
+ animation:
+ rainbowPulse 1.5s infinite;
+
+}
+
+
+@keyframes rainbowPulse {
+
+ 0% {
+
+  box-shadow:
+ 0 0 0 0 rgba(255,79,216,.5);
+
+ }
+
+ 100% {
+
+  box-shadow:
+ 0 0 0 25px rgba(255,79,216,0);
+
+ }
+
+}
+
+
+/* ANIMAZIONE ENTRATA CARD */
+
+.login-card,
+.live-card,
+.panel {
+
+ animation:
+ popIn .6s ease;
+
+}
+
+
+@keyframes popIn {
+
+ from {
+
+ opacity:0;
+ transform:
+ translateY(20px)
+ scale(.96);
+
+ }
+
+ to {
+
+ opacity:1;
+ transform:
+ translateY(0)
+ scale(1);
+
+ }
+
+}
