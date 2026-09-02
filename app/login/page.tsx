@@ -18,49 +18,37 @@ export default function LoginPage() {
     setError("");
     setLoading(true);
 
-    const { data: user, error } = await supabase
-      .from("participants")
-      .select("*")
-      .eq("login_name", username.trim().toLowerCase())
-      .eq("password", password)
-      .single();
+    const { data, error } = await supabase.rpc("login_participant", {
+      p_login_name: username.trim(),
+      p_password: password,
+    });
 
-    console.log("LOGIN RESULT:", user, error);
+    const user = data?.[0];
 
     if (error || !user) {
+      console.error("LOGIN ERROR:", error);
       setError("Nome o password non corretti.");
       setLoading(false);
       return;
     }
 
-    localStorage.setItem(
-      "participant",
-      JSON.stringify(user)
-    );
+    localStorage.setItem("participant", JSON.stringify(user));
 
-    if (user.is_admin) {
-      router.replace("/admin");
-    } else {
-      router.replace("/auction");
-    }
+    router.replace(user.is_admin ? "/admin" : "/auction");
   }
 
   return (
     <main className="center-screen">
       <section className="login-card">
+        <div className="eyebrow">🌈 LEGA 2026/27 🦄</div>
 
-        <div className="eyebrow">
-          LEGA 2026/27
-        </div>
-
-        <h1>Asta Fantacalcio</h1>
+        <h1>Fantabusone</h1>
 
         <p className="muted">
           Entra con il nome assegnato e la tua password.
         </p>
 
         <form onSubmit={submit} className="stack-lg">
-
           <label>
             Nome
             <input
@@ -83,21 +71,12 @@ export default function LoginPage() {
             />
           </label>
 
-          {error && (
-            <div className="error-box">
-              {error}
-            </div>
-          )}
+          {error && <div className="error-box">{error}</div>}
 
-          <button
-            className="primary big"
-            disabled={loading}
-          >
-            {loading ? "Accesso..." : "ENTRA"}
+          <button className="primary big" disabled={loading}>
+            {loading ? "Accesso..." : "🌈 ENTRA 🦄"}
           </button>
-
         </form>
-
       </section>
     </main>
   );
