@@ -261,3 +261,49 @@ input {
  }
 
 }
+
+/* 🦄 LOGO FLOTTANTE FANTABUSONE */
+
+.magic-logo {
+  position: fixed;
+  top: 18px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+
+  padding: 8px 18px;
+  border-radius: 999px;
+
+  background: rgba(255,255,255,.65);
+  backdrop-filter: blur(15px);
+
+  border: 2px solid rgba(255,255,255,.8);
+
+  color: #8b2c9e;
+
+  font-size: 22px;
+  font-weight: 1000;
+  letter-spacing: .08em;
+
+  box-shadow:
+    0 10px 40px rgba(180,90,220,.25);
+
+  animation: unicornFloat 3s ease-in-out infinite;
+}
+
+
+@keyframes unicornFloat {
+
+  0%,100% {
+    transform:
+      translateX(-50%)
+      translateY(0);
+  }
+
+  50% {
+    transform:
+      translateX(-50%)
+      translateY(-8px);
+  }
+
+}
